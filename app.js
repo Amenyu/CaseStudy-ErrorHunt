@@ -1,6 +1,7 @@
 const express = require('express'); 
 const path = require ('path'); 
 const cors = require('cors');
+const bodyParser = require('body-parser');    //#2 import body parser 
 
 const nav= [
     {
@@ -57,5 +58,5 @@ app.get('/',function(req,res){
 
 
 app.listen(5000,()=>{
-    console.log("Server Ready on 3000");
+    console.log("Server Ready on 5000");     //#5 Wrongly consoled.
 });

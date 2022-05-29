@@ -16,4 +16,4 @@ var users=[{
 ]
 
 
-module.exports=user;
+module.exports=users;      //#4 Export object Variable name was wrong , correct it  
