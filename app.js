@@ -3,24 +3,6 @@ const path = require ('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');    //#2 Part 1 
 
-// const nav= [
-//     {
-//         link:"/books",
-//         title:"Books"
-//     },
-//     {
-//         link:"/authors",
-//         title:"Authors"
-//     },
-//     {
-//         link:"/addbook",
-//         title:"Add Book"
-//     },
-//     {
-//         link:"/addauthor",
-//         title:"Add Author"
-//     }
-// ]
 
 const loginRouter = require('./src/routes/loginroute');
 const signupRouter = require('./src/routes/signuproute');
@@ -54,9 +36,8 @@ app.get('/',function(req,res){
 });
 
 
+const PORT = process.env.PORT || 5000;
 
-
-
-app.listen(5000,()=>{
-    console.log("Server Ready on 5000");     //#5 Part 1
+app.listen(PORT,()=>{
+    console.log(`Server Ready on ${PORT}`);     //#5 Part 1
 });
