@@ -1,6 +1,7 @@
 const express = require('express'); 
 const signupRouter = express.Router();
-const user = require('../data/user');
+// const user = require('../data/user');
+const userdata = require('../model/UserModel');
 
 signupRouter.get('/',function(req,res){
 
@@ -11,12 +12,12 @@ signupRouter.get('/',function(req,res){
 signupRouter.get("/adduser",function(req,res){
     
     var newuser = {
-        "uid":req.param("uid"),
-        "pwd":req.param("pwd")
+        "uid":req.query.uid,  //#10 part 2
+        "pwd":req.query.pwd
     };
     console.log(newuser);
-    user.push(newuser);
-    console.log(user);
+    const user = new userdata(newuser);
+    user.save();
     res.redirect("/login");
 })
 
